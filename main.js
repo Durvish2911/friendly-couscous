@@ -23,10 +23,10 @@ var ball = {
 
 function setup(){
   var canvas =  createCanvas(700,600);
-  canvas.parent("canvas");
+ canvas.parent("gamer");
   video=createCapture(VIDEO);
   video.size(700,600);
-  video.hide();
+  
   video.parent("canvas");
   pn=ml5.poseNet(video,modelLoaded);
   pn.on("pose",gotposes);
@@ -34,7 +34,13 @@ function setup(){
 function modelLoaded(){
   console.log("model is loaded");
 }
-
+ function gotposes(){
+   if (results.lenght>0){
+     console.log(results);
+     nosex=results[0].pose.nose.x;
+     nosey=results[0].pose.nose.y;
+   }
+ }
 function draw(){
 
  background(0); 
@@ -135,13 +141,13 @@ function move(){
 }
 if(pcscore ==4){
     fill("#FFA500");
-    stroke(0)
+    stroke(0);
     rect(0,0,width,height-1);
     fill("white");
     stroke("white");
-    textSize(25)
+    textSize(25);
     text("Game Over!☹☹",width/2,height/2);
-    text("Reload The Page!",width/2,height/2+30)
+    text("Reload The Page!",width/2,height/2+30);
     noLoop();
     pcscore = 0;
 }
@@ -158,7 +164,7 @@ function models(){
     noStroke();
     text("Width:"+width,135,15);
     text("Speed:"+abs(ball.dx),50,15);
-    text("Height:"+height,235,15)
+    text("Height:"+height,235,15);
 }
 
 

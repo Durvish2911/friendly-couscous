@@ -7,10 +7,10 @@ font-family: cursive;
 h3{
     font-size: 30px !important;
     background-color: navy;
-    color: black;
+    color: white;
 }
 #btb{
-    background-color: navy;
+    background-color:brown ;
 }
 .copy_right_footer{
     bottom: 0%;
@@ -20,5 +20,13 @@ h3{
     line-height: 3;
     width: 100%;
     text-align: center;
+}
+#modaler{
+    background-color: white;
+    width: 30%;
+    margin-left: 800px;
+    height: 50%;
+    font-size: 30px !important;
+    margin-top: 50px;
 }
 

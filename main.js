@@ -156,6 +156,13 @@ if(pcscore ==4){
    }   
 }
 
+nosex="";
+gamestatus="";
+nosey="";
+function play(){
+  gamestatus="start";
+  document.getElementById("boom").innerHTML="game has loaded";
+}
 
 //width height of canvas speed of ball 
 function models(){
